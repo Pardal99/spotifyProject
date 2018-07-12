@@ -38,6 +38,8 @@
   "DETAILS": "Details ",
   "LIKES": "Likes",
   "DISC_NUMBER": "Disc number:",
-  "DURATION_MS": "Duration in ms:"
+  "DURATION_MS": "Duration in ms:",
+
+  "DARK_THEME": "Dark theme"
 
 }

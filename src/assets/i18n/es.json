@@ -38,6 +38,8 @@
   "DETAILS": "Detalles ",
   "LIKES": "Likes",
   "DISC_NUMBER": "Numero de disco:",
-  "DURATION_MS": "Duracion en ms:"
+  "DURATION_MS": "Duracion en ms:",
+
+  "DARK_THEME": "Tema oscuro"
 
 }

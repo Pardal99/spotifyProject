@@ -25,6 +25,8 @@ export class MyApp {
   placeholder = 'assets/img/avatar/pablo_profile.png';
   chosenPicture: any;
 
+  theme_notify: boolean = false;
+
   constructor(
     public translate: TranslateService,
     public platform: Platform,
@@ -88,4 +90,13 @@ export class MyApp {
     this.rightMenuItems.map(menuItem => menuItem.active = false);
     item.active = true;
   }
+
+  changeTheme() {
+    if(this.theme_notify === true){
+      this.global.set('theme', 'theme-dark');
+    } else {
+      this.global.set('theme', '');
+    }
+  }
+
 }
