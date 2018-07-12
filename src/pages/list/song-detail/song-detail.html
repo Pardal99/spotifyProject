@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ song.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="song-detail" padding>
+    <h2>{{song.name}}</h2>
+    <p> {{ 'DISC_NUMBER' | translate }} {{song.disc_number}}</p>
+    <p>{{ 'DURATION_MS' | translate }} {{song.duration_ms}}</p>
+  </div>
+</ion-content>

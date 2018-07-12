@@ -1,15 +1,12 @@
 {
+  "BACK_BUTTON_TEXT": "Atras",
+
   "NAME": "Nombre",
-  "PASSWORD": "Contraseña",
   "EMAIL": "Email",
+  "USERNAME": "Nombre de usuario",
+  "PASSWORD": "Contraseña",
   "LOGIN": "Iniciar sesión",
   "SIGNUP": "Registrarse",
-
-  "TAB1_TITLE": "Items",
-  "TAB2_TITLE": "Buscar",
-  "TAB3_TITLE": "Ajustes",
-
-  "MAP_TITLE": "Mapa",
 
   "SETTINGS_TITLE": "Ajustes",
   "SETTINGS_OPTION1": "Opción 1",
@@ -17,9 +14,9 @@
   "SETTINGS_OPTION3": "Opción 3",
   "SETTINGS_OPTION4": "Opción 4",
 
-  "SETTINGS_PAGE_PROFILE": "Editar Perfil",
+  "SETTINGS_PROFILE_BUTTON": "Editar Perfil",
 
-  "WELCOME_TITLE": "Bienvenido/a",
+  "WELCOME_TITLE": "Aplicacion Api Spotify",
 
   "LOGIN_TITLE": "Iniciar sesión",
   "LOGIN_ERROR": "No se ha podido iniciar sesión. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
@@ -28,19 +25,19 @@
   "SIGNUP_ERROR": "No se ha podido crear la cuenta. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
   "SIGNUP_BUTTON": "Registrarse",
 
-  "LIST_MASTER_TITLE": "Items",
-
-  "ITEM_CREATE_TITLE": "Nuevo Item",
-  "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
+  "DONE_BUTTON": "Hecho",
+  "CANCEL_BUTTON": "Cancelar",
+  "DELETE_BUTTON": "Borrar",
 
   "CONTENT_TITLE": "Contenido",
   "SETTINGS_TITLE": "Ajustes",
-  "SEARCH_TITLE": "Buscar",
   "LOGOUT_TITTLE": "Cerrar sesion",
-  "LIST_SONGS_TITLE": "Lista de canciones",
+  "SONGS_LIST_TITLE": "Lista de canciones",
   "DESCRIPTION_SONGS_TITLE": "Descripcion",
 
   "DETAILS": "Detalles ",
-  "LIKES": "Likes"
+  "LIKES": "Likes",
+  "DISC_NUMBER": "Numero de disco:",
+  "DURATION_MS": "Duracion en ms:"
 
 }
