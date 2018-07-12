@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{ 'LIST_SONGS_TITLE' | translate }}</ion-title>
+    <ion-title>{{ 'SONGS_LIST_TITLE' | translate }}</ion-title>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -22,8 +22,7 @@
         </button>
       </ion-col>
       <ion-col>
-         <!-- (click)="openSong(jsonSong)" -->
-        <button ion-button color="primary" clear small icon-start>
+        <button ion-button (click)="openSong(jsonSong)" color="primary" clear small icon-start>
             <ion-icon name='information-circle'></ion-icon>
             {{ 'DETAILS' | translate }}
         </button>
