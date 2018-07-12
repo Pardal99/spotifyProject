@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://example.com/api/v1';
 
   constructor(public http: HttpClient) {
   }
@@ -21,27 +20,27 @@ export class Api {
     // Support easy query params for GET requests
     if (params) {
       reqOpts.params = new HttpParams();
-      for (let k in params) {
-        reqOpts.params = reqOpts.params.set(k, params[k]);
+      for (const field of Object.keys(params)) {
+        reqOpts.params.set(field, params[field]);
       }
     }
 
-    return this.http.get(this.url + '/' + endpoint, reqOpts);
+    return this.http.get(endpoint, reqOpts);
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {
-    return this.http.post(this.url + '/' + endpoint, body, reqOpts);
+    return this.http.post(endpoint, body, reqOpts);
   }
 
   put(endpoint: string, body: any, reqOpts?: any) {
-    return this.http.put(this.url + '/' + endpoint, body, reqOpts);
+    return this.http.put(endpoint, body, reqOpts);
   }
 
   delete(endpoint: string, reqOpts?: any) {
-    return this.http.delete(this.url + '/' + endpoint, reqOpts);
+    return this.http.delete(endpoint, reqOpts);
   }
 
   patch(endpoint: string, body: any, reqOpts?: any) {
-    return this.http.patch(this.url + '/' + endpoint, body, reqOpts);
+    return this.http.patch(endpoint, body, reqOpts);
   }
 }

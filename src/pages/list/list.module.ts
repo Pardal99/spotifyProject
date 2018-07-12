@@ -2,18 +2,22 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 
-import { ItemDetailPage } from './item-detail';
+import { ListService } from './list.service';
+import { ListPage } from './list';
 
 @NgModule({
   declarations: [
-    ItemDetailPage,
+    ListPage,
   ],
   imports: [
-    IonicPageModule.forChild(ItemDetailPage),
+    IonicPageModule.forChild(ListPage),
     TranslateModule.forChild()
   ],
   exports: [
-    ItemDetailPage
+    ListPage
+  ],
+  providers: [
+    ListService
   ]
 })
-export class ItemDetailPageModule { }
+export class ListPageModule { }

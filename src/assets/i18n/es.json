@@ -33,8 +33,14 @@
   "ITEM_CREATE_TITLE": "Nuevo Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
 
-  "CARDS_TITLE": "Social",
   "CONTENT_TITLE": "Contenido",
-  "SETTINGS_TITLE": "settings",
-  "SEARCH_TITLE": "Buscar"
+  "SETTINGS_TITLE": "Ajustes",
+  "SEARCH_TITLE": "Buscar",
+  "LOGOUT_TITTLE": "Cerrar sesion",
+  "LIST_SONGS_TITLE": "Lista de canciones",
+  "DESCRIPTION_SONGS_TITLE": "Descripcion",
+
+  "DETAILS": "Detalles ",
+  "LIKES": "Likes"
+
 }
