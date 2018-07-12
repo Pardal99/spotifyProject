@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule, NavController } from 'ionic-angular';
 
+import { LoginService } from './login.service';
 import { LoginPage } from './login';
 
 @NgModule({
@@ -14,6 +15,9 @@ import { LoginPage } from './login';
   ],
   exports: [
     LoginPage
+  ],
+  providers: [
+    LoginService
   ]
 })
 export class LoginPageModule { }

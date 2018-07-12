@@ -7,7 +7,7 @@ import { Config, Nav, Platform, MenuController } from 'ionic-angular';
 import { Subject } from 'rxjs/Subject';
 
 import { FirstRunPage } from '../pages';
-import { Settings } from '../providers';
+import { Settings } from '../providers/index';
 
 @Component({
   templateUrl: 'app.html'
@@ -17,11 +17,12 @@ export class MyApp {
 
   rootPage = FirstRunPage;
   activePage = new Subject();
+  listSongsMenuTitle: string;
 
   pages: Array<{ title: string, component: any, active: boolean, icon: string }>;
   rightMenuItems: Array<{ icon: string, active: boolean }>;
   state: any;
-  placeholder = 'assets/img/avatar/girl-avatar.png';
+  placeholder = 'assets/img/avatar/pablo_profile.png';
   chosenPicture: any;
 
   constructor(
@@ -35,22 +36,20 @@ export class MyApp {
     public menuCtrl: MenuController
   ) {
     this.initializeApp();
+    this.initTranslate();
+
     this.rightMenuItems = [
-      { icon: 'archive', active: false },
-      { icon: 'bookmarks', active: false },
+      { icon: 'information-circle', active: false },
       { icon: 'list-box', active: false },
       { icon: 'settings', active: false },
-      { icon: 'search', active: false },
-      { icon: 'log-out', active: false },
+      { icon: 'log-out', active: false }
     ];
 
     this.pages = [
-      { title: 'Cards', component: 'CardsPage', active: false, icon: 'bookmarks' },
-      { title: 'Content', component: 'ContentPage', active: false, icon: 'archive' },
-      { title: 'Master Detail', component: 'ListMasterPage', active: false, icon: 'list-box' },
-      { title: 'Settings', component: 'SettingsPage', active: false, icon: 'settings' },
-      { title: 'Search', component: 'SearchPage', active: false, icon: 'search' },
-      { title: 'Logout', component: 'LoginPage', active: false, icon: 'log-out' }
+      { title: 'LIST_SONGS_TITLE', component: 'ListPage', active: false, icon: 'list-box' },
+      { title: 'DESCRIPTION_SONGS_TITLE', component: 'ContentPage', active: false, icon: 'information-circle' },
+      { title: 'SETTINGS_TITLE', component: 'SettingsPage', active: false, icon: 'settings' },
+      { title: 'LOGOUT_TITTLE', component: 'LoginPage', active: false, icon: 'log-out' }
     ];
 
     this.activePage.subscribe((selectedPage: any) => {
@@ -58,33 +57,13 @@ export class MyApp {
         page.active = page.title === selectedPage.title;
       });
     });
-    this.initTranslate();
   }
 
   initTranslate() {
     // Set the default language for translation strings, and the current language.
-    this.translate.setDefaultLang('en');
-    const browserLang = this.translate.getBrowserLang();
+    this.translate.setDefaultLang('es');
+    this.translate.use('es');;
 
-    if (browserLang) {
-      if (browserLang === 'zh') {
-        const browserCultureLang = this.translate.getBrowserCultureLang();
-
-        if (browserCultureLang.match(/-CN|CHS|Hans/i)) {
-          this.translate.use('zh-cmn-Hans');
-        } else if (browserCultureLang.match(/-TW|CHT|Hant/i)) {
-          this.translate.use('zh-cmn-Hant');
-        }
-      } else {
-        this.translate.use(this.translate.getBrowserLang());
-      }
-    } else {
-      this.translate.use('en'); // Set your language here
-    }
-
-    this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
-      this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
-    });
   }
 
   initializeApp() {

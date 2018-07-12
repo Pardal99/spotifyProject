@@ -2,7 +2,8 @@ import 'rxjs/add/operator/toPromise';
 
 import { Injectable } from '@angular/core';
 
-import { Api } from '../api/api';
+import { ApiService } from '../api/api.service';
+import { ApiUrls } from '../api/api.urls';
 
 /**
  * Most apps have the concept of a User. This is a simple provider
@@ -27,7 +28,7 @@ import { Api } from '../api/api';
 export class User {
   _user: any;
 
-  constructor(public api: Api) { }
+  constructor(public api: ApiService) { }
 
   /**
    * Send a POST request to our login endpoint with the data

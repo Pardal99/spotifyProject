@@ -5,6 +5,7 @@ import { AppState } from './app.global';
 import { ToastService } from '../providers/util/toast.service';
 import { AlertService } from '../providers/util/alert.service';
 import { CameraProvider } from '../providers/util/camera.provider';
+import { StorageService } from '../providers/index';
 
 // Ionic native providers
 import { CardIO } from '@ionic-native/card-io';
@@ -34,6 +35,7 @@ export const MODULES = [
 export const PROVIDERS = [
   AlertService,
   ToastService,
+  StorageService,
   AppState,
   CameraProvider,
 
