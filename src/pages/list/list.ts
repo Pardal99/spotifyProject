@@ -28,4 +28,10 @@ export class ListPage {
         });
   }
 
+  openSong(song: any) {
+    this.navCtrl.push('SongDetailPage', {
+      song: song
+    });
+  }
+
 }
