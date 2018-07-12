@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'LIST_SONGS_TITLE' | translate }}</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let jsonSong of jsonSongs?.tracks">
+    <ion-item>
+      <h2>{{jsonSong.name}}</h2>
+      <p>{{jsonSong.artists[0].name}}</p>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+            <ion-icon name='thumbs-up'></ion-icon>
+            {{jsonSong.popularity}} {{ 'LIKES' | translate }}
+        </button>
+      </ion-col>
+      <ion-col>
+         <!-- (click)="openSong(jsonSong)" -->
+        <button ion-button color="primary" clear small icon-start>
+            <ion-icon name='information-circle'></ion-icon>
+            {{ 'DETAILS' | translate }}
+        </button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-content>
