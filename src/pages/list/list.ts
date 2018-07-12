@@ -11,7 +11,7 @@ import { ListService } from './list.service';
 export class ListPage {
   searchStr = '7ouMYWpwJ422jRcDASZB7P%2C4VqPOruhp5EdPBeR92t6lQ%2C2takcwOaAZWiXQijPHIx7B';
   searchRes: string;
-  jsonSongs: any;
+  public jsonSongs: any;
 
   constructor(
     public navCtrl: NavController,
@@ -22,18 +22,10 @@ export class ListPage {
   }
 
   searchMusic(){
-    console.log('busca musica');
     this.jsonSongs = this.listService.searchMusic(this.searchStr)
         .subscribe(res => {
-            this.jsonSongs = res.tracks;
+          this.jsonSongs = res;
         });
   }
-
-  // openSong(song: any) {
-  //   console.log(song);
-  //   // this.navCtrl.push('SongDetailPage', {
-  //   //
-  //   // });
-  // }
 
 }

@@ -49,7 +49,7 @@ export class MyApp {
       { title: 'LIST_SONGS_TITLE', component: 'ListPage', active: false, icon: 'list-box' },
       { title: 'DESCRIPTION_SONGS_TITLE', component: 'ContentPage', active: false, icon: 'information-circle' },
       { title: 'SETTINGS_TITLE', component: 'SettingsPage', active: false, icon: 'settings' },
-      { title: 'LOGOUT_TITTLE', component: 'LoginPage', active: false, icon: 'log-out' }
+      { title: 'LOGOUT_TITTLE', component: 'WelcomePage', active: false, icon: 'log-out' }
     ];
 
     this.activePage.subscribe((selectedPage: any) => {

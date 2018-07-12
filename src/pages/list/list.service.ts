@@ -19,13 +19,12 @@ export class ListService{
     ){ }
 
     searchMusic(str:string){
-
       this.searchUrl = this.urls.spotifyTracksSearch + '?ids=' + str + '&market=ES';
       const authorizationHeader = 'Bearer ' + this.storage.get('access_token');
       const headers = new Headers({ 'Authorization': authorizationHeader });
       const options = new RequestOptions({ headers: headers });
 
-      return this.api.get(this.searchUrl, options).map(res => res);
+      return this.api.get(this.searchUrl, options).share();
     }
 
 }
