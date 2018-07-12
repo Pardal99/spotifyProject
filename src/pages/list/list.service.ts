@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { RequestOptions } from '@angular/http';
-import { Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
 
 import { ApiService, ApiUrls, StorageService } from '../../providers/index';
 
@@ -20,11 +16,15 @@ export class ListService{
 
     searchMusic(str:string){
       this.searchUrl = this.urls.spotifyTracksSearch + '?ids=' + str + '&market=ES';
-      const authorizationHeader = 'Bearer ' + this.storage.get('access_token');
-      const headers = new Headers({ 'Authorization': authorizationHeader });
-      const options = new RequestOptions({ headers: headers });
+      const authorizationHeader = 'Bearer ' + this.getToken();
 
-      return this.api.get(this.searchUrl, options).share();
+      return this.api.get(this.searchUrl, {
+         headers: {'Authorization': authorizationHeader}
+      }).share();
+    }
+
+    getToken(){
+      return this.storage.get('access_token');
     }
 
 }
