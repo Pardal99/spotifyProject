@@ -11,7 +11,7 @@
   <ion-card *ngFor="let jsonSong of jsonSongs?.tracks">
     <ion-item>
       <h2>{{jsonSong.name}}</h2>
-      <p>{{jsonSong.artists[0].name}}</p>
+      <p>{{ 'ALBUM' | translate }} {{jsonSong.album.name}}</p>
     </ion-item>
 
     <ion-row>

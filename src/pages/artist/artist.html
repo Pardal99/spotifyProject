@@ -7,26 +7,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list no-lines>
+<ion-content>
     <ion-card *ngFor="let eachArtist of artist">
+        <ion-thumbnail item-start>
+          <img [src]="eachArtist.img">
+        </ion-thumbnail>
       <ion-item>
-        <h2>{{eachArtist.name}}</h2>
+        <h1 (click)="openArtistSongs(eachArtist)">{{eachArtist.name}}</h1>
       </ion-item>
-
-      <ion-row>
-        <ion-col>
-        </ion-col>
-        <ion-col>
-          <button ion-button (click)="openArtist(eachArtist)" color="primary" clear small icon-start>
-              <ion-icon name='information-circle'></ion-icon>
-              {{ 'DETAILS' | translate }}
-          </button>
-        </ion-col>
-        <ion-col>
-        </ion-col>
-      </ion-row>
-
+      <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='heart'></ion-icon>
+          {{eachArtist.followers}} {{ 'FOLLOWERS' | translate }}
+      </button>
+      <button ion-button color="primary" (click)="openArtistDetails(eachArtist)" clear small icon-start>
+          <ion-icon name='information-circle'></ion-icon>
+          {{ 'DETAILS' | translate }}
+      </button>
     </ion-card>
-  </ion-list>
 </ion-content>
