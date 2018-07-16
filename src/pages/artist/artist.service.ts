@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ApiService, ApiUrls } from '../../providers/index';
 
 @Injectable()
-export class ListService{
+export class ArtistService{
     private searchUrl: string;
     private result: any;
 
@@ -13,8 +13,8 @@ export class ListService{
       private urls: ApiUrls
     ){ }
 
-    searchMusic (str: string, authorizationHeader: string) {
-      this.searchUrl = this.urls.spotifyTracksSearch + '?ids=' + str + '&market=ES';
+    searchArtists (str: string, authorizationHeader: string) {
+      this.searchUrl = this.urls.spotifyQuerySearch + str + '&type=artist';
 
       return this.api.get(this.searchUrl, {
         headers: {'Authorization': authorizationHeader}

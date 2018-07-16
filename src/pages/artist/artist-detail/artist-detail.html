@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'DETAILS' | translate }}</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-thumbnail item-start *ngIf="artist.images[0]?.url">
+    <img [src]="artist.images[0]?.url">
+  </ion-thumbnail>
+
+  <div class="artist-detail" padding>
+    <h2>{{ artist.name }}</h2>
+    <p>{{ artist?.followers?.total }} {{ 'FOLLOWERS' | translate }} </p>
+  </div>
+</ion-content>

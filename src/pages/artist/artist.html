@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'ARTIST_LIST_TITLE' | translate }}</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionInput)="searchArtists($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
+    <ion-card *ngFor="let eachArtist of artist?.artists?.items">
+        <ion-thumbnail item-start *ngIf="eachArtist.images[0]?.url">
+          <img [src]="eachArtist.images[0]?.url">
+        </ion-thumbnail>
+      <ion-item>
+        <h1 (click)="openArtistSongs(eachArtist)">{{eachArtist.name}}</h1>
+      </ion-item>
+      <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='heart'></ion-icon>
+          {{eachArtist.followers?.total}} {{ 'FOLLOWERS' | translate }}
+      </button>
+      <button ion-button color="primary" (click)="openArtistDetails(eachArtist)" clear small icon-start>
+          <ion-icon name='information-circle'></ion-icon>
+          {{ 'DETAILS' | translate }}
+      </button>
+    </ion-card>
+</ion-content>
