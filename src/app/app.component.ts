@@ -48,7 +48,8 @@ export class MyApp {
     ];
 
     this.pages = [
-      { title: 'SONGS_LIST_TITLE', component: 'ListPage', active: false, icon: 'list-box' },
+      { title: 'ARTIST_LIST_TITLE', component: 'ArtistPage', active: false, icon: 'list-box' },
+      //{ title: 'SONGS_LIST_TITLE', component: 'ListPage', active: false, icon: 'list-box' },
       { title: 'DESCRIPTION_SONGS_TITLE', component: 'ContentPage', active: false, icon: 'information-circle' },
       { title: 'SETTINGS_TITLE', component: 'SettingsPage', active: false, icon: 'settings' },
       { title: 'LOGOUT_TITTLE', component: 'WelcomePage', active: false, icon: 'log-out' }

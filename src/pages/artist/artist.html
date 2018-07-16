@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ 'ARTIST_LIST_TITLE' | translate }}</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-card *ngFor="let eachArtist of artist">
+      <ion-item>
+        <h2>{{eachArtist.name}}</h2>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <button ion-button (click)="openArtist(eachArtist)" color="primary" clear small icon-start>
+              <ion-icon name='information-circle'></ion-icon>
+              {{ 'DETAILS' | translate }}
+          </button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+  </ion-list>
+</ion-content>
