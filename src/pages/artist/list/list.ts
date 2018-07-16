@@ -32,7 +32,7 @@ export class SongListPage {
 
   searchMusic(){
     const combined = forkJoin(
-      this.getToken()
+      this.storage.getToken()
     );
 
     combined.subscribe(latestValues => {
@@ -40,9 +40,6 @@ export class SongListPage {
 
       this.listService.searchMusic(this.artist.id, authorizationHeader, 'ES').subscribe(data => {
         this.jsonSongs = data
-        console.log(this.jsonSongs);
-        console.log('jsonSongs tracks',this.jsonSongs.tracks);
-        console.log('jsonSongs tracks album',this.jsonSongs.tracks[0].album);
       });
     });
   }
@@ -51,10 +48,6 @@ export class SongListPage {
     this.navCtrl.push('SongDetailPage', {
       song: song
     });
-  }
-
-  getToken(){
-    return this.storage.get('access_token');
   }
 
 }

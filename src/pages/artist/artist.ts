@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { forkJoin } from "rxjs/observable/forkJoin";
+
+import { ArtistService } from './artist.service';
+import { StorageService } from '../../providers/index';
 
 @IonicPage()
 @Component({
@@ -7,31 +11,47 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'artist.html',
 })
 export class ArtistPage {
-
-  artist = [ {
-    name: "Band Of Horses",
-    id: "0OdUWJ0sBjDrqHygGUXeCF",
-    img: "https://i.scdn.co/image/8ae35be1043f330173de198c35a49161337e829c",
-    followers: 5567
-  }, {
-    name: "Marea",
-    id: "5EBH204cwRkvAWknwTAjCQ",
-    img: "https://i.scdn.co/image/d31b970b88e8b7268ff5fc83d46bb1d20dbdfa4c",
-    followers: 513215
-  }, {
-    name: "Chambao",
-    id: "2qhLqZ1pkiUl5HNrU2Nz0R",
-    img: "https://i.scdn.co/image/e2fcf464e363810c04aa3206f4c6dc771b66af6a",
-    followers: 205883
-  } ];
+  currentArtists: any = [];
+  artist: any = [];
 
   constructor(
+    public artistService: ArtistService,
+    private storage: StorageService,
     public navCtrl: NavController,
     public navParams: NavParams
   ) {  }
 
   ionViewWillEnter() {
     // this.searchArtists();
+  }
+
+  searchArtists(ev) {
+    let val = ev.target.value;
+    if (!val || !val.trim()) {
+      this.currentArtists = [];
+      return;
+    }
+    this.currentArtists = this.query({
+      name: val
+    });
+  }
+
+  query(params?: any) {
+    if (!params) {
+      return;
+    }
+
+    const combined = forkJoin(
+      this.storage.getToken()
+    );
+
+    combined.subscribe(latestValues => {
+      const authorizationHeader = 'Bearer ' + latestValues[0];
+
+      this.artistService.searchArtists(params.name, authorizationHeader).subscribe(data => {
+        this.artist = data
+      });
+    });
   }
 
   openArtistSongs(artist: any) {
