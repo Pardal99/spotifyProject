@@ -33,10 +33,13 @@
   "SETTINGS_TITLE": "Ajustes",
   "LOGOUT_TITTLE": "Cerrar sesion",
   "SONGS_LIST_TITLE": "Lista de canciones",
+  "ARTIST_LIST_TITLE": "Lista de artistas",
   "DESCRIPTION_SONGS_TITLE": "Descripcion",
 
-  "DETAILS": "Detalles ",
+  "DETAILS": "Detalles",
+  "ALBUM": "Album:",
   "LIKES": "Likes",
+  "FOLLOWERS": "Followers",
   "DISC_NUMBER": "Numero de disco:",
   "DURATION_MS": "Duracion en ms:",
 

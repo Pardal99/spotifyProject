@@ -3,18 +3,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 
 import { ListService } from './list.service';
-import { ListPage } from './list';
+import { SongListPage } from './list';
 
 @NgModule({
   declarations: [
-    ListPage,
+    SongListPage,
   ],
   imports: [
-    IonicPageModule.forChild(ListPage),
+    IonicPageModule.forChild(SongListPage),
     TranslateModule.forChild()
   ],
   exports: [
-    ListPage
+    SongListPage
   ],
   providers: [
     ListService
