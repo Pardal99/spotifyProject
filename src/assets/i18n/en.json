@@ -35,6 +35,7 @@
   "SONGS_LIST_TITLE": "Songs list",
   "ARTIST_LIST_TITLE": "Artist list",
   "DESCRIPTION_SONGS_TITLE": "Description",
+  "SEARCH_ARTIST_TITLE": "Search artists",
 
   "DETAILS": "Details",
   "ALBUM": "Album:",
@@ -43,6 +44,7 @@
   "DISC_NUMBER": "Disc number:",
   "DURATION_MS": "Duration in ms:",
 
-  "DARK_THEME": "Dark theme"
+  "DARK_THEME": "Dark theme",
+  "SEARCH_PLACEHOLDER": "Search the artist, e.g. \"Marea\""
 
 }

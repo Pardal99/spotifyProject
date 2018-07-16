@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class ApiUrls {
 
   spotifyApi = 'https://api.spotify.com/';
-  spotifyQuerySearch = 'https://api.spotify.com/v1/search?query=';
+  spotifyQuerySearch = 'https://api.spotify.com/v1/search?q=';
   spotifyTracksSearch = 'https://api.spotify.com/v1/tracks';
   spotifyArtistsSearch = 'https://api.spotify.com/v1/artists/';
   spotifyAlbumsSearch = 'https://api.spotify.com/v1/albums/';

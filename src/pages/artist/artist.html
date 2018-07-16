@@ -8,16 +8,17 @@
 </ion-header>
 
 <ion-content>
-    <ion-card *ngFor="let eachArtist of artist">
-        <ion-thumbnail item-start>
-          <img [src]="eachArtist.img">
+  <ion-searchbar (ionInput)="searchArtists($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
+    <ion-card *ngFor="let eachArtist of artist?.artists?.items">
+        <ion-thumbnail item-start *ngIf="eachArtist.images[0]?.url">
+          <img [src]="eachArtist.images[0]?.url">
         </ion-thumbnail>
       <ion-item>
         <h1 (click)="openArtistSongs(eachArtist)">{{eachArtist.name}}</h1>
       </ion-item>
       <button ion-button color="primary" clear small icon-start>
           <ion-icon name='heart'></ion-icon>
-          {{eachArtist.followers}} {{ 'FOLLOWERS' | translate }}
+          {{eachArtist.followers?.total}} {{ 'FOLLOWERS' | translate }}
       </button>
       <button ion-button color="primary" (click)="openArtistDetails(eachArtist)" clear small icon-start>
           <ion-icon name='information-circle'></ion-icon>

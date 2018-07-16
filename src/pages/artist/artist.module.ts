@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 
+import { ArtistService } from './artist.service';
 import { ArtistPage } from './artist';
 
 @NgModule({
@@ -15,8 +16,8 @@ import { ArtistPage } from './artist';
   exports: [
     ArtistPage
   ],
-  // providers: [
-  //   ListService
-  // ]
+  providers: [
+    ArtistService
+  ]
 })
 export class ArtistPageModule {}

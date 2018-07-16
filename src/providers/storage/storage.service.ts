@@ -15,6 +15,10 @@ export class StorageService extends Storage {
     });
   }
 
+  getToken(){
+    return this.get('access_token');
+  }
+
   public getItems(keys: string[]) {
     const promises = [];
 
