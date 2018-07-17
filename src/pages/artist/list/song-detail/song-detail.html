@@ -8,6 +8,14 @@
   <div class="song-detail" padding>
     <h2>{{song.name}}</h2>
     <p> {{ 'DISC_NUMBER' | translate }} {{song.disc_number}}</p>
-    <p>{{ 'DURATION_MS' | translate }} {{song.duration_ms}}</p>
+    <!-- <p>{{ 'DURATION_MS' | translate }} {{song.duration_ms}}</p>
+
+    <p>{{song.uri}} </p>
+    <p>{{getSongUrl(song?.album?.uri)}} </p>
+    <p>{{songUrl}} </p> -->
+
+    <iframe style="width:100%" [src]="getSongUrl(song?.uri)" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
   </div>
+
 </ion-content>
