@@ -10,6 +10,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import { LangSelectorModule } from
+  '../components/lang-selector/lang-selector.module';
 import { MODULES, PROVIDERS } from './app.imports';
 import { Items } from '../mocks/providers/items';
 import { Settings, User, ApiService, ApiUrls, Api } from '../providers/index';
@@ -51,6 +53,7 @@ export function provideSettings(storage: Storage) {
         deps: [HttpClient]
       }
     }),
+    LangSelectorModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],

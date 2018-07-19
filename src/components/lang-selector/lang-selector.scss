@@ -1,0 +1,50 @@
+lang-selector {
+
+  .alert-radio-icon{
+      border-radius: 0 !important;
+      border: none !important;
+      height: 40px !important;
+      width: 40px !important;
+      background-size: 40px 40px !important;
+      background-repeat: no-repeat ;
+  }
+
+  [id^="alert-input-"][id$="-0"] .alert-radio-icon{
+      background-image: url("../../assets/img/icon/icon_spain.png") !important;
+  }
+   [id^="alert-input-"][id$="-1"] .alert-radio-icon{
+      background-image: url("../../assets/img/icon/icon_united-kingdom.png") !important;
+  }
+  .alert-radio-inner{
+      background-color: transparent !important;
+  }
+
+  width: 140px;
+  position: absolute;
+  right: -75px;
+
+  // .button-inner{
+  //   border-radius: 0 !important;
+  //   border: none !important;
+  //   height: 35px !important;
+  //   width: 35px !important;
+  //   background-size: 35px 35px !important;
+  //   background-repeat: no-repeat ;
+  //   background: url('../../assets/img/icon/icon_spain.png') transparent;
+  // }
+
+  .popover-content {
+    top: 49px;
+    right: 5px;
+    transform-origin: right top 0px;
+    max-width: 100px;
+  }
+
+    .spanish-icon {
+      background-image: url('../assets/img/icon/icon_spain.png') transparent;
+    }
+
+    .united-kingdom-icon {
+      background: url('../../assets/img/icon/icon_united-kingdom.png') transparent;
+    }
+}
